@@ -1,26 +1,26 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import ProtectedRoute from "../components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-import AdminRoute from "../components/AdminRoute";
+import AdminRoute from "./components/AdminRoute";
 
 import Dashboard
-from "./src/Dashboard";
+from "./Dashboard";
 
 import AdminProducts
-from "./src/Products";
+from "./Products";
 
 import Upload
-from "./src/Upload";
+from "./Upload";
 
 import Orders
-from "./src/Orders";
+from "./Orders";
 
 import Analytics
-from "./src/Analytics";
+from "./Analytics";
 
 import Settings
-from "./src/Settings";
+from "./Settings";
 
 function App() {
 
@@ -32,39 +32,115 @@ function App() {
 
       <Routes>
 
+         <Route
+    path="/"
+    element={<Navigate to="/admin" replace />}
+  />
+
+        <Route 
+        path="/admin" 
+        element={ 
+        <ProtectedRoute>
+
+          <AdminRoute>
+
+            <Dashboard />
+
+          </AdminRoute>
+
+        </ProtectedRoute>
+         } 
+        />
+
         <Route
-          path="/admin"
+          path="/admin/dashboard"
           element={
-            user?.role === "admin"
-              ? <Dashboard />
-              : <Navigate to="/" />
-          }
+            <ProtectedRoute>
+
+              <AdminRoute>
+
+                <Dashboard />
+
+              </AdminRoute>
+
+            </ProtectedRoute>
+           }
         />
 
 
         <Route
           path="/admin/products"
-          element={<AdminProducts />}
+          element={
+            <ProtectedRoute>
+              
+              <AdminRoute>
+
+                <AdminProducts />
+                
+              </AdminRoute>
+
+            </ProtectedRoute>
+          }
         />
 
         <Route
           path="/admin/upload"
-          element={<Upload />}
+          element={
+            <ProtectedRoute>
+              
+              <AdminRoute>
+
+                <Upload />
+
+              </AdminRoute>
+
+            </ProtectedRoute>
+          }
         />
 
         <Route
           path="/admin/orders"
-          element={<Orders />}
+          element={
+            <ProtectedRoute>
+              
+              <AdminRoute>
+
+                <Orders />
+
+              </AdminRoute>
+
+            </ProtectedRoute>
+          }
         />
 
         <Route
           path="/admin/analytics"
-          element={<Analytics />}
+          element={
+            <ProtectedRoute>
+              
+              <AdminRoute>
+
+                <Analytics />
+                
+              </AdminRoute>
+
+            </ProtectedRoute>
+          }
         />
 
         <Route
           path="/admin/settings"
-          element={<Settings />}
+          element={
+            <ProtectedRoute>
+              
+              <AdminRoute>
+
+                <Settings />
+
+              </AdminRoute>
+
+            </ProtectedRoute>
+          }
         />
 
       </Routes>

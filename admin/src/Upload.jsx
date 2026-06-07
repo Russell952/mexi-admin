@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import API from "../services/api";
+import API from "./services/api";
 
 import AdminLayout
-from "../components/AdminLayout";
+from "./components/AdminLayout";
 
 
 function Upload() {

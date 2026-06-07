@@ -60,6 +60,11 @@
   box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
+.logo {
+    width: 160px;
+    height: 110px;
+}
+
 .settings-container{
   display:grid;
   gap:20px;

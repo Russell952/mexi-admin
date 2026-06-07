@@ -1,4 +1,4 @@
-import mexiLogo from '../src/assets/mexi-logo.png';
+import mexiLogo from "../assets/Mexi-logo.png";
 
 function Topbar({ setSidebarOpen }) {
 

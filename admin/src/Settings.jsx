@@ -1,5 +1,5 @@
 import AdminLayout
-from "../components/AdminLayout";
+from "./components/AdminLayout";
 
 import { useNavigate }
 from "react-router-dom";

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import SideBar from "../components/SideBar";
-import Topbar from "../components/TopBar";
-import AdminLayout from "../components/AdminLayout";
+import SideBar from "./components/SideBar";
+import Topbar from "./components/TopBar";
+import AdminLayout from "./components/AdminLayout";
 
 
 const Dashboard = () => {

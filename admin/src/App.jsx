@@ -4,6 +4,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 import AdminRoute from "./components/AdminRoute";
 
+import Login from "./login";
+
 import Dashboard
 from "./Dashboard";
 
@@ -31,6 +33,17 @@ function App() {
     <BrowserRouter>
 
       <Routes>
+
+        <Route
+          path="/login"
+          element={
+            user ? (
+              <Navigate to="/admin" replace />
+            ) : (
+              <Login />
+            )
+          }
+        />  
 
          <Route
     path="/"

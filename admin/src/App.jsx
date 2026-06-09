@@ -43,12 +43,7 @@ function App() {
               <Login />
             )
           }
-        />  
-
-         <Route
-    path="/"
-    element={<Navigate to="/admin" replace />}
-  />
+        />
 
         <Route 
         path="/admin" 

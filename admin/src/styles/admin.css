@@ -459,6 +459,43 @@
     background-color: #FFFFFF;
 }
 
+.auth-container{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.auth-form{
+  background:white;
+  width:350px;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.auth-form h2{
+  text-align:center;
+}
+
+.auth-form input{
+  width:100%;
+  padding:14px;
+  margin:10px 0;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+.auth-form button{
+  width:100%;
+  padding:14px;
+  border:none;
+  background:black;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+
 /* Desktop */
 
 .side-menu {

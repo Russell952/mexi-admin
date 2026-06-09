@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import API from "./services/api";
 import SideBar from "./components/SideBar";
 import Topbar from "./components/TopBar";
 import AdminLayout from "./components/AdminLayout";
@@ -18,18 +18,17 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const productRes = await axios.get(
-        "http://localhost:5000/api/products"
-      );
+      const productRes = await API.get("/products", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-      const orderRes = await axios.get(
-        "http://localhost:5000/api/orders",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const orderRes = await API.get("/orders", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       setProducts(productRes.data);
       setOrders(orderRes.data);

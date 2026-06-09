@@ -21,10 +21,18 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
 
-    localStorage.setItem(
-      "user",
-      JSON.stringify(user)
-    );
+    if (user) {
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify(user)
+      );
+
+    } else {
+
+      localStorage.removeItem("user");
+
+    }
 
   }, [user]);
 
